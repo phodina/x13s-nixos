@@ -54,6 +54,9 @@ buildLinux {
   version = source.version;
   defconfig = "johan_defconfig";
 
+  # NOTE: Disables configs that are applied by the NixOS
+  enableCommonConfig = false;
+
   kernelPatches = patches;
 
   extraMeta.branch = source.rev;
