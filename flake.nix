@@ -1,4 +1,5 @@
 {
+  description = "Lenovo x13s laptop";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 

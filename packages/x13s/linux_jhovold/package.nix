@@ -56,6 +56,7 @@ buildLinux {
 
   # NOTE: Disables configs that are applied by the NixOS
   enableCommonConfig = false; 
+  ignoreConfigErrors = true;
 
   # Simplified configuration with required options
   structuredConfig = with lib.kernel; {
