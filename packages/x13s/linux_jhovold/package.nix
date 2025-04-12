@@ -55,7 +55,21 @@ buildLinux {
   defconfig = "johan_defconfig";
 
   # NOTE: Disables configs that are applied by the NixOS
-  enableCommonConfig = false;
+  enableCommonConfig = false; 
+
+  # Simplified configuration with required options
+  structuredConfig = with lib.kernel; {
+    
+    # Disable conflicting platform options explicitly
+    ARCH_BCM2835 = no;
+    BCM2835_MBOX = no;
+    BCM2835_WDT = no;
+    PCI_TEGRA = no;
+    RASPBERRYPI_FIRMWARE = no;
+    RASPBERRYPI_POWER = no;
+    SERIAL_8250_BCM2835AUX = no;
+    USB_XHCI_TEGRA = no;
+  };
 
   kernelPatches = patches;
 
